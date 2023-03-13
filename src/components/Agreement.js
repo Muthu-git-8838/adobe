@@ -67,26 +67,26 @@ const AgreementSender = (props) => {
         <button
           type="button"
           className={
-            props.able ? "btn btn-danger mx-1" : "btn btn-success mx-1"
+            props.able ? "btn btn-danger mx-1" : "btn btn-primary mx-1"
           }
           disabled={props.able}
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
+          data-bs-target="#exampleModal2"
         >
           Enter Recpt. E-mail
         </button>
         {/* Modal */}
         <div
           className="modal fade"
-          id="exampleModal"
+          id="exampleModal2"
           tabIndex={-1}
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="exampleModalLabe3"
           aria-hidden="true"
         >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h6 className="modal-title" id="exampleModalLabel">
+                <h6 className="modal-title" id="exampleModalLabe3">
                   Recepient Details
                 </h6>
                 <button
@@ -98,7 +98,7 @@ const AgreementSender = (props) => {
               </div>
               <div className="modal-body">
                 <form>
-                  <label htmlFor="email" className="form-coontrol">
+                  {/* <label htmlFor="email" className="form-coontrol">
                     Enter The Recepient E-mail :
                   </label>
                   <input
@@ -112,7 +112,7 @@ const AgreementSender = (props) => {
                     className="form-control"
                     placeholder="Enter E-mail here . . "
                   />
-                  <label htmlFor="email" className="form-coontrol">
+                  <label htmlFor="type" className="form-coontrol">
                     Give The Document Type :
                   </label>
                   <input
@@ -122,10 +122,41 @@ const AgreementSender = (props) => {
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
-                    id="email"
+                    id="type"
                     className="form-control"
                     placeholder="E.g) agreement "
-                  />
+                  /> */}
+                  <div>
+                    <div className="form-floating mb-3">
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                        className="form-control"
+                        id="floatingInput"
+                        placeholder="|"
+                      />
+                      <label htmlFor="floatingInput">Recepient Email</label>
+                    </div>
+                    <div className="form-floating">
+                      <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => {
+                          setName(e.target.value);
+                        }}
+                        className="form-control"
+                        id="floatingPassword"
+                        placeholder="|"
+                      />
+                      <label htmlFor="floatingPassword">Document Name</label>
+                    </div>
+                  </div>
+
                   <button
                     className={
                       email === "" || name === ""
@@ -139,13 +170,9 @@ const AgreementSender = (props) => {
                   </button>
                 </form>
               </div>
-              {/* <div className="modal-footer">
-          <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" className="btn btn-primary">Save changes</button>
-        </div> */}
             </div>
           </div>
-          {apiData.data && <h2>SuccessFully Sent . . . </h2>}
+          {/* {apiData.data && <h2>SuccessFully Sent . . . </h2>} */}
         </div>
       </div>
     </div>

@@ -1,17 +1,15 @@
 import React from "react";
-import { MdEditSquare, MdOutlineRateReview, MdPrint, MdSignLanguage } from "react-icons/md";
-import { NavLink } from "react-router-dom";
-import { FaPen, FaSign} from "react-icons/fa"
+import { MdEditSquare, MdOutlineRateReview } from "react-icons/md";
 import FileUpload from "./FileUpload";
 
 const Page1A = () => {
   return (
-    <div className="doc">
+    <>
       <table className="table mt-5">
         <tbody>
           <tr>
-            <td className="text-center fw-normal fs-3 doc-head">
-                DOCUMENT-1
+            <td className="text-center fw-normal fs-3 doc-head" scope="row">
+              DOCUMENT-1
             </td>
             <td className="fs-4 doc-ed">
               Edit <MdEditSquare />
@@ -19,17 +17,9 @@ const Page1A = () => {
             <td className="fs-4 doc-ed">
               View <MdOutlineRateReview />
             </td>
-
-            {/* <td className="fs-4 doc-ed">
-              <NavLink to="/" className="text-decoration-none">
-                Print <MdPrint />
-              </NavLink>
-            </td> */}
-            <td className=" d-flex flex-direction-column">
-              {/* <NavLink to="/" className="text-decoration-none"> */}
-                <FileUpload/>
-              {/* </NavLink> */}
-            </td>
+            {/* <td className=" d-flex flex-direction-column">
+            <FileUpload />
+          </td> */}
           </tr>
           {/* <tr>
             <td className="text-center fw-normal fs-3 doc-head">
@@ -75,7 +65,10 @@ const Page1A = () => {
           </tr> */}
         </tbody>
       </table>
-    </div>
+      <div className="d-flex justify-content-center my-1">
+        <FileUpload />
+      </div>
+    </>
   );
 };
 
